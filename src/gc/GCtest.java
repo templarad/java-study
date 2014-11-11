@@ -5,8 +5,6 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-import objectsystem.ObjectSystem;
-
 public class GCtest {
 
 	public static void main(String[] args) {
@@ -15,7 +13,7 @@ public class GCtest {
 		List<GCtestModel> oslist = new ArrayList<GCtestModel>();
 		Thread t = new Thread();
 		System.out.println("starting for");
-		for(int i = 0 ; i < 2 ; i++){
+		for(int i = 0 ; i < 1000 ; i++){
 			oslist.add(new GCtestModel(String.valueOf(i)));
 		}
 		System.out.println("Made 1000 objects");
@@ -28,15 +26,14 @@ public class GCtest {
         try {
 			Thread.sleep(1000L);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
-        if(weakr!=null){
-        	os = weakr.get();
-
-        	os.getA();
-        	System.out.println("Weak is alive: ¥n"+t.getName());
-        }
+//        if(weakr!=null){
+//        	os = weakr.get();
+//
+//        	os.getA();
+//        	System.out.println("Weak is alive: ¥n"+t.getName());
+//        }
         if(softr!=null){
         	os = softr.get();
         	os.getA();

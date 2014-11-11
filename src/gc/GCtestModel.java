@@ -10,7 +10,8 @@ public class GCtestModel {
 	private String g = "------------ABOUT------------¥n";
 	
 	GCtestModel(String input){
-		a = input;
+		a += input;
+		
 	}
 
 	public String getA(){
