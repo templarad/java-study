@@ -5,7 +5,7 @@ public class TextBuilder extends Builder{
 
 	@Override
 	public void makeTitle(String title) {
-		buffer.append("=============================\n");
+		buffer.append("============Start=============\n");
 		buffer.append("[" + title + "]\n");
 		buffer.append("\n");
 	}
@@ -26,7 +26,7 @@ public class TextBuilder extends Builder{
 
 	@Override
 	public void close() {
-		buffer.append("=============================");
+		buffer.append("=============END=============");
 
 	}
 
