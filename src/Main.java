@@ -29,7 +29,11 @@ public class Main {
 
 
 	public static void main(String[] args){
+<<<<<<< HEAD
 		MethodInvokeTest.test();
+=======
+		
+>>>>>>> origin/master
 //		TestIterator tt = new TestIterator();
 //		tt.run();
 		//mediator();
