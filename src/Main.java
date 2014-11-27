@@ -5,6 +5,7 @@ import iterator.TestIterator;
 import java.io.IOException;
 import java.util.Date;
 
+import designpattern.builder.TestBuilder;
 import mediator.LoginFrame;
 import adapterpattern.FileIO;
 import adapterpattern.FileProperties;
@@ -29,11 +30,8 @@ public class Main {
 
 
 	public static void main(String[] args){
-<<<<<<< HEAD
-		MethodInvokeTest.test();
-=======
-		
->>>>>>> origin/master
+
+		TestBuilder testbuilder = new TestBuilder();
 //		TestIterator tt = new TestIterator();
 //		tt.run();
 		//mediator();
