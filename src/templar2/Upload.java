@@ -1,4 +1,4 @@
-package templar2;
+Ôªøpackage templar2;
 
 import java.io.*;
 //import java.awt.*;
@@ -23,7 +23,7 @@ public class Upload extends JPanel{
 		} catch (IOException e) {
 			e.printStackTrace();			
 		} catch (Exception e) {
-			System.out.println("UnknownÅ@Exception!");
+			System.out.println("Unknown„ÄÄException!");
 			e.printStackTrace();
 			}
 	}
@@ -38,7 +38,7 @@ public class Upload extends JPanel{
 		String uploadType[] = {"html","htm"};
 		filec.setFileFilter(new FileNameExtensionFilter("HTML&HTM",uploadType));
 		int res=filec.showOpenDialog(null);
-		if(res==JFileChooser.APPROVE_OPTION){//ëIë
+		if(res==JFileChooser.APPROVE_OPTION){//ÈÅ∏Êäû
 			//Filename=filec.getSelectedFile().getPath();
 			File uploadf=filec.getSelectedFile();
 			FileTypeMap map=FileTypeMap.getDefaultFileTypeMap();
@@ -47,11 +47,11 @@ public class Upload extends JPanel{
 					return uploadf;
 				}
 				else{
-					JOptionPane.showMessageDialog(null,"Please select a \"HTML/HTM\" file!","íçà”ÅI",2);				
+					JOptionPane.showMessageDialog(null,"Please select a \"HTML/HTM\" file!","Ê≥®ÊÑèÔºÅ",2);				
 				}
 				
 			}
-		else System.exit(0);//ñ¢ëIë
+		else System.exit(0);//Êú™ÈÅ∏Êäû
 		return null;
 	}
 	
