@@ -8,6 +8,8 @@ import designpattern.Singleton;
 import designpattern.TemplateMethodImplA;
 import designpattern.TemplateMethodImplB;
 import designpattern.TemplateMethods;
+import designpattern.builder.TestBuilder;
+import designpattern.command.*;
 import designpattern.observer.Observer;
 import designpattern.observer.State;
 import designpattern.observer.Subject;
@@ -35,7 +37,9 @@ public class Main {
 
 
 	public static void main(String[] args){
-		observer();
+		//observer();
+		command();
+		//builder();
 		//singleton();
 		//templatemethods();
 //		TestIterator tt = new TestIterator();
@@ -78,6 +82,41 @@ public class Main {
 	public static void template(TemplateMethods temp){
 		temp.foo();
 	}
+	/**
+	 * Builder pattern
+	 */
+	public static void builder(){
+		TestBuilder testbuilder = new TestBuilder();
+	}
+	/**
+	 * 
+	 * 
+	 */
+	public static void command() {  
+        CommandManager commandMgr = new CommandManager();  
+          
+        Receiver receiver = new Receiver();
+  
+        System.out.println("--- execute command ---");
+        Command commandAaa = new ConcreteCommand(receiver, "aaa");  
+        commandMgr.executeCommand(commandAaa);
+          
+        Command commandBbb = new ConcreteCommand(receiver, "bbb");  
+        commandMgr.executeCommand(commandBbb);
+          
+        Command commandCcc = new ConcreteCommand(receiver, "ccc");  
+        commandMgr.executeCommand(commandCcc);
+          
+        Command commandDdd = new ConcreteCommand(receiver, "ddd");  
+        commandMgr.executeCommand(commandDdd);
+          
+        System.out.println(receiver.getData());
+          
+        System.out.println("-- undo ---");
+        commandMgr.undoCommand();
+        commandMgr.undoCommand();
+        System.out.println(receiver.getData());  
+    } 
 	/**
 	 * Strategy pattern
 	 * <p>
