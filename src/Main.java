@@ -1,10 +1,13 @@
 //import factorypattern.*;
 //import idcard.*;
-import iterator.TestIterator;
 
 import java.io.IOException;
 import java.util.Date;
 
+import designpattern.Singleton;
+import designpattern.TemplateMethodImplA;
+import designpattern.TemplateMethodImplB;
+import designpattern.TemplateMethods;
 import mediator.LoginFrame;
 import adapterpattern.FileIO;
 import adapterpattern.FileProperties;
@@ -29,12 +32,33 @@ public class Main {
 
 
 	public static void main(String[] args){
-		
+		singleton();
+		templatemethods();
 //		TestIterator tt = new TestIterator();
 //		tt.run();
 		//mediator();
 		//strategy();
 		//bridge();
+	}
+	/**
+	 * Singleton Pattern
+	 */
+	public static void singleton(){
+		Singleton singleton = Singleton.getInstance();
+		singleton.showCount();
+		Singleton singleton2 = Singleton.getInstance();
+		singleton2.showCount();
+	}
+	
+	public static void templatemethods(){
+		TemplateMethodImplA tmp = new TemplateMethodImplA();
+		TemplateMethodImplB tmpb = new TemplateMethodImplB();
+		template(tmp);
+		template(tmpb);
+
+	}
+	public static void template(TemplateMethods temp){
+		temp.foo();
 	}
 	/**
 	 * Strategy pattern
