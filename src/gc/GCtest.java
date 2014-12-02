@@ -28,13 +28,13 @@ public class GCtest {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} 
-//        if(weakr!=null){
-//        	os = weakr.get();
-//
-//        	os.getA();
-//        	System.out.println("Weak is alive: ¥n"+t.getName());
-//        }
-        if(softr!=null){
+        if(weakr.get()!=null){
+        	os = weakr.get();
+
+        	os.getA();
+        	System.out.println("Weak is alive: ¥n"+t.getName());
+        }
+        if(softr.get()!=null){
         	os = softr.get();
         	os.getA();
         	System.out.println("Soft is alive: ¥n"+t.getName());
