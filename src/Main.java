@@ -8,6 +8,9 @@ import designpattern.Singleton;
 import designpattern.TemplateMethodImplA;
 import designpattern.TemplateMethodImplB;
 import designpattern.TemplateMethods;
+import designpattern.observer.Observer;
+import designpattern.observer.State;
+import designpattern.observer.Subject;
 import mediator.LoginFrame;
 import adapterpattern.FileIO;
 import adapterpattern.FileProperties;
@@ -32,14 +35,29 @@ public class Main {
 
 
 	public static void main(String[] args){
-		singleton();
-		templatemethods();
+		observer();
+		//singleton();
+		//templatemethods();
 //		TestIterator tt = new TestIterator();
 //		tt.run();
 		//mediator();
 		//strategy();
 		//bridge();
 	}
+	
+	/**
+	 * Observer Pattern
+	 */
+	public static void observer(){
+		Subject subject = new Subject();
+		Observer observer = new Observer(subject);
+		subject.addObserver(observer);
+		
+		subject.setState(State.START);
+		
+		subject.setState(State.END);
+	}
+	
 	/**
 	 * Singleton Pattern
 	 */

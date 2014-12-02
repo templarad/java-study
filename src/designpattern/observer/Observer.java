@@ -10,6 +10,5 @@ public class Observer {
 
 	public void update() {
 		System.out.println("Observer state change to " + subject.getState());
-		State state = subject.getState();
 	}
 }
