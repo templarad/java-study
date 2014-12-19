@@ -8,6 +8,7 @@ import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@SuppressWarnings("serial")
 public class LoginFrame extends Frame implements ActionListener, Mediator{
 
 	private ColleagueCheckbox checkGuest;

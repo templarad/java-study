@@ -12,6 +12,10 @@ import java.awt.event.ActionListener;
 
 public class SafeFrame extends Frame implements Context, ActionListener{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private TextField textClock = new TextField(60);
 	private TextArea textScreen = new TextArea(10,60);
 	private Button buttonUse = new Button("金庫使用");

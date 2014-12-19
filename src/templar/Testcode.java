@@ -2,9 +2,8 @@ package templar;
 import java.io.*;
 
 public class Testcode {
-// ƒtƒ@ƒCƒ‹‚©‚çƒoƒCƒg’PˆÊ‚Å“Ç‚İ‚Ş—á
+// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Cï¿½gï¿½Pï¿½Ê‚Å“Ç‚İï¿½ï¿½Ş—ï¿½
 	public Testcode(String OPENFILENAME,String Outputfile){
-	File test=new File(OPENFILENAME);
 	File outtest=new File(Outputfile);
 
 	try {
@@ -30,6 +29,7 @@ public class Testcode {
 	        code = "Unicode";
 	    else if(head[0]==-17 && head[1]==-69 && head[2] ==-65)  
 	        code = "UTF-8";
+	    inputStream.close();
 	    return code;
 	}
 

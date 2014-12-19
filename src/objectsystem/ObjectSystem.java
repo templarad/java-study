@@ -2,6 +2,7 @@ package objectsystem;
 
 public class ObjectSystem {
 
+	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 
 		//Test1
@@ -13,7 +14,6 @@ public class ObjectSystem {
 		
 		//Test 2
 		ObjectSystem obs = new ObjectSystem();
-		ObjectSystem obs2 = new ObjectSystem();
 		Class<Class> a = Class.class;//a is class object of java.lang.Class
 		
 		System.out.println();

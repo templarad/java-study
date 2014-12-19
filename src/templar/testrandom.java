@@ -1,5 +1,4 @@
 package templar;
-import java.io.*;
 import java.util.Random;
 
 public class testrandom {
@@ -13,6 +12,6 @@ public class testrandom {
 	
 	}
 	public static void main(String[] args){
-		testrandom aa=new testrandom();
+		new testrandom();
 	}
 }

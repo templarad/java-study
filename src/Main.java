@@ -4,23 +4,34 @@
 import java.io.IOException;
 import java.util.Date;
 
-import designpattern.Singleton;
-import designpattern.TemplateMethodImplA;
-import designpattern.TemplateMethodImplB;
-import designpattern.TemplateMethods;
-import designpattern.builder.TestBuilder;
-import designpattern.command.*;
-import designpattern.observer.Observer;
-import designpattern.observer.State;
-import designpattern.observer.Subject;
 import mediator.LoginFrame;
+import prototype.MessageBox;
+import prototype.Product;
+import prototype.UnderlinePen;
+import state.SafeFrame;
+import strategy.Hand;
+import strategy.Player;
+import strategy.RandomStrategy;
+import strategy.WinningStrategy;
 import adapterpattern.FileIO;
 import adapterpattern.FileProperties;
 import bridge.CountDisplay;
 import bridge.StringDisplayImp;
-import prototype.*;
-import state.SafeFrame;
-import strategy.*;
+import designpattern.Singleton;
+import designpattern.TemplateMethodImplA;
+import designpattern.TemplateMethodImplB;
+import designpattern.Iterator.IDcard;
+import designpattern.Iterator.IDcards;
+import designpattern.Iterator.Iterator;
+import designpattern.builder.TestBuilder;
+import designpattern.command.Command;
+import designpattern.command.CommandManager;
+import designpattern.command.ConcreteCommand;
+import designpattern.command.Receiver;
+import designpattern.facade.Facade;
+import designpattern.observer.Observer;
+import designpattern.observer.State;
+import designpattern.observer.Subject;
 /**
  * Design Pattern test class.
  * <p>
@@ -37,8 +48,10 @@ public class Main {
 
 
 	public static void main(String[] args){
+		(new Facade()).makepeople();
+		iterator();
 		//observer();
-		command();
+		//command();
 		//builder();
 		//singleton();
 		//templatemethods();
@@ -49,6 +62,33 @@ public class Main {
 		//bridge();
 	}
 	
+	private static void iterator() {
+		IDcard carda = new IDcard();
+		carda.setColor("green");
+		carda.setId(1);
+		IDcard cardb = new IDcard();
+		cardb.setColor("blue");
+		cardb.setId(2);
+		IDcard cardc = new IDcard();
+		cardc.setColor("yellow");
+		cardc.setId(3);
+		IDcard cardd = new IDcard();
+		cardd.setColor("red");
+		cardd.setId(4);
+		IDcards cards = new IDcards();
+		cards.addItem(carda);
+		cards.addItem(cardb);
+		cards.addItem(cardc);
+		cards.addItem(cardd);
+		Iterator it = cards.iterator();
+		while (it.hasNext()){
+			IDcard card = (IDcard) it.next();
+			System.out.println("ID :"+ card.getId());
+			System.out.println("Color :" + card.getColor());
+		}
+	}
+
+
 	/**
 	 * Observer Pattern
 	 */
@@ -75,21 +115,23 @@ public class Main {
 	public static void templatemethods(){
 		TemplateMethodImplA tmp = new TemplateMethodImplA();
 		TemplateMethodImplB tmpb = new TemplateMethodImplB();
-		template(tmp);
-		template(tmpb);
+		System.out.println("templateA:");
+		tmp.foo();
+		System.out.println("");
+		System.out.println("templateB:");
+		tmpb.foo();
 
 	}
-	public static void template(TemplateMethods temp){
-		temp.foo();
-	}
+
 	/**
 	 * Builder pattern
 	 */
+	@SuppressWarnings("unused")
 	public static void builder(){
 		TestBuilder testbuilder = new TestBuilder();
 	}
 	/**
-	 * 
+	 * Command pattern
 	 * 
 	 */
 	public static void command() {  

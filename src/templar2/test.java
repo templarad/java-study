@@ -5,6 +5,10 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class test extends JApplet implements ActionListener{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	JLabel label;
 	JButton a1,a2;
 	public void init(){
@@ -16,6 +20,6 @@ public class test extends JApplet implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		Upload aa=new Upload();
+		new Upload();
 	}
 }

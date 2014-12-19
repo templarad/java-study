@@ -4,6 +4,11 @@ import java.awt.Button;
 
 public class ColleagueButton extends Button implements Colleague{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@SuppressWarnings("unused")
 	private Mediator mediator;
 	
 	public ColleagueButton(String caption){

@@ -7,6 +7,10 @@ import java.awt.event.ItemListener;
 
 public class ColleagueCheckbox extends Checkbox implements ItemListener, Colleague{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Mediator mediator;
 	@Override
 	public void setMediator(Mediator mediator) {

@@ -6,6 +6,10 @@ import java.awt.event.TextEvent;
 import java.awt.event.TextListener;
 
 public class ColleagueTextField extends TextField implements TextListener, Colleague{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Mediator mediator;
 
 	public ColleagueTextField(String text, int columns){

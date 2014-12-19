@@ -7,7 +7,12 @@ public abstract class TemplateMethods {
 		execute();
 		after();
 	}
-	protected abstract void before();
+	protected void before(){//Annotation
+		System.out.println("before");
+		//log
+	}
 	protected abstract void execute();
-	protected abstract void after();
+	protected void after(){
+		System.out.println("after");
+	}
 }

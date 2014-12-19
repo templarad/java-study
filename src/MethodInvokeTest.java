@@ -38,6 +38,7 @@ public class MethodInvokeTest {
      * @param fieldName フィールド名 
      *  
      */  
+	@SuppressWarnings({ "rawtypes", "unchecked" })
     public static Object getFieldValueByName(   
             Object object, String fieldName)   
     throws SecurityException, NoSuchMethodException,   
@@ -46,7 +47,8 @@ public class MethodInvokeTest {
         if (object == null)  
             return null;  
           
-        Class cls = object.getClass();  
+        
+		Class cls = object.getClass();  
   
         //フィールドのgetメソッド名を取得  
         char firstChar = fieldName.charAt(0);  
@@ -68,7 +70,8 @@ public class MethodInvokeTest {
      * @param object    対象となるオブジェクト     
      * @param fieldName フィールド名 
      *  
-     */  
+     */ 
+	@SuppressWarnings("rawtypes")
     public static void setFieldValueByName(  
             Object object,  
             String fieldName,   
@@ -90,7 +93,7 @@ public class MethodInvokeTest {
           
         setFieldValueByName(cls, object, fieldName, argTypes, argValues);  
     }  
-      
+	@SuppressWarnings({ "rawtypes", "unchecked" })
     public static void setFieldValueByName(Class cls,   
             Object object,  
             String fieldName,   
