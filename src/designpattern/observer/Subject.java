@@ -14,9 +14,10 @@ public class Subject {
 	}
 	public void setState(State state){
 		this.state = state;
-		for(Observer o : this.observers){
-			o.update();
-		} 
+		this.observers.parallelStream().forEach(Observer :: update);//multi-thread
+//		for(Observer o : this.observers){
+//			o.update();
+//		} 
 	}
 	public void addObserver(Observer observer){
 		this.observers.add(observer);

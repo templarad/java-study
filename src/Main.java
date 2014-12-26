@@ -1,3 +1,5 @@
+import idcard.IDCardFactory;
+
 import java.io.IOException;
 import java.util.Date;
 
@@ -29,6 +31,7 @@ import designpattern.facade.Facade;
 import designpattern.observer.Observer;
 import designpattern.observer.State;
 import designpattern.observer.Subject;
+import factorypattern.Factory;;
 
 /**
  * Design Pattern test class.
@@ -48,10 +51,10 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		// (new Facade()).makepeople();
+		 (new Facade()).makepeople("");
 		// iterator();
-		observer();
-		// command();
+		//observer();
+		 //command();
 		// builder();
 		// singleton();
 		// templatemethods();
@@ -91,7 +94,7 @@ public class Main {
 	}
 
 	/**
-	 * Observer Pattern
+	 * Observer pattern
 	 */
 	public static void observer() {
 		Subject subject = new Subject();
@@ -103,7 +106,7 @@ public class Main {
 	}
 
 	/**
-	 * Singleton Pattern
+	 * Singleton pattern
 	 */
 	public static void singleton() {
 		Singleton singleton = Singleton.getInstance();
@@ -111,7 +114,10 @@ public class Main {
 		Singleton singleton2 = Singleton.getInstance();
 		singleton2.showCount();
 	}
-
+	
+	/**
+	 * Template method pattern
+	 */
 	public static void templatemethods() {
 		TemplateMethodImplA tmp = new TemplateMethodImplA();
 		TemplateMethodImplB tmpb = new TemplateMethodImplB();
@@ -233,18 +239,18 @@ public class Main {
 	 * Factory pattern
 	 * <p>
 	 */
-	// public static void test(String[] args){
-	// Factory factory = new IDCardFactory();//ここを切り替えるだけて，下は全部抽象クラスのメソッドを使う
-	// Product card1 = factory.create("ad");
-	// Product card2 = factory.create("lj");
-	// Product card3 = factory.create("jjj");
-	// card1.use();
-	// card2.use();
-	// card3.use();
-	// ((IDCardFactory)factory).printlist();
-	// Object o = new Object();
-	//
-	// }
+	 public static void test(String[] args){
+	 Factory factory = new IDCardFactory();//ここを切り替えるだけて，下は全部抽象クラスのメソッドを使う
+	 factorypattern.Product card1 = factory.create("ad");
+	 factorypattern.Product card2 = factory.create("lj");
+	 factorypattern.Product card3 = factory.create("jjj");
+	 card1.use();
+	 card2.use();
+	 card3.use();
+	 ((IDCardFactory)factory).printlist();
+	 Object o = new Object();
+	
+	 }
 	/**
 	 * 文字列結合.
 	 * <p>
