@@ -5,7 +5,7 @@ public class ClassA {
 	public ClassA(String param){
 		this.feeling = param;
 	}
-	public void head(){//param
+	public void head(){//Using parameter will push out the advantage of facade pattern
 		if(feeling.equals("angry")){
 			System.out.println(" (*~*)");	
 		} else if (feeling.equals("happy")) {

@@ -31,6 +31,7 @@ import designpattern.facade.Facade;
 import designpattern.observer.Observer;
 import designpattern.observer.State;
 import designpattern.observer.Subject;
+import designpattern.prototype.Prototype;
 import factorypattern.Factory;;
 
 /**
@@ -51,7 +52,7 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		 (new Facade()).makepeople("");
+//		 (new Facade()).makepeople("");
 		// iterator();
 		//observer();
 		 //command();
@@ -63,6 +64,7 @@ public class Main {
 		// mediator();
 		// strategy();
 		// bridge();
+		prototype2();
 	}
 
 	private static void iterator() {
@@ -207,16 +209,17 @@ public class Main {
 		cd.customDisplay(3);
 	}
 
-	public void prototype() {
+	public static void prototype() {
 		MessageBox a = new MessageBox('t');
 		UnderlinePen udp = new UnderlinePen('-');
 		Product b = a.createClone();
-		b.use("test");
-		MessageBox y = new MessageBox('y');
-		Product yy = y.createClone();
+		a.use("message box");
+		b.use("clone box");
+		MessageBox x = new MessageBox('y');
+		Product y = x.createClone();
 		Product udp2 = udp.createClone();
-		yy.use("fuck");
-		udp2.use("under");
+		y.use("clone box from y");
+		udp2.use("clone under line");
 	}
 
 	public void adapterpattern() {
@@ -287,5 +290,15 @@ public class Main {
 
 			}
 		}
+	}
+	
+	public static void prototype2() {
+		Prototype a = new Prototype();
+		Prototype b = a.createClone();
+		a.setName("ok");
+		a.setAge(88);
+		System.out.println(b.getName());
+		System.out.println(b.getAge());
+		
 	}
 }
