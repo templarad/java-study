@@ -1,7 +1,10 @@
 import idcard.IDCardFactory;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Optional;
 
 import mediator.LoginFrame;
 import prototype.MessageBox;
@@ -22,6 +25,7 @@ import designpattern.TemplateMethodImplB;
 import designpattern.Iterator.IDcard;
 import designpattern.Iterator.IDcards;
 import designpattern.Iterator.Iterator;
+import designpattern.abstractfactory.Machine;
 import designpattern.builder.TestBuilder;
 import designpattern.command.Command;
 import designpattern.command.CommandManager;
@@ -53,7 +57,7 @@ public class Main {
 
 	public static void main(String[] args) {
 //		 (new Facade()).makepeople("");
-		// iterator();
+		 iterator();
 		//observer();
 		 //command();
 		// builder();
@@ -64,10 +68,23 @@ public class Main {
 		// mediator();
 		// strategy();
 		// bridge();
-		prototype2();
+		//prototype2();
+		//abstractFactory();
 	}
-
+	private static void lambda(){
+		Optional<String> hogeOpt = Optional.ofNullable(getHoge()); // 値をラップする
+		hogeOpt.ifPresent(System.out :: println);
+		hogeOpt.map(String :: length)
+				.ifPresent(aa -> {System.out.println(aa);
+				System.out.println(aa);});
+		Collections.sort(Arrays.asList(Collections.class.getMethods()), 
+				(a,b) -> 
+					{
+						return a.getName().compareTo(b.getName());
+					});
+	}
 	private static void iterator() {
+		//Data set
 		IDcard carda = new IDcard();
 		carda.setColor("green");
 		carda.setId(1);
@@ -80,6 +97,7 @@ public class Main {
 		IDcard cardd = new IDcard();
 		cardd.setColor("red");
 		cardd.setId(4);
+		//Add to list
 		IDcards cards = new IDcards();
 		cards.addItem(carda);
 		cards.addItem(cardb);
@@ -95,6 +113,10 @@ public class Main {
 		}
 	}
 
+	public static void abstractFactory(){
+		Machine game = new Machine();
+		game.createCharacter();
+	}
 	/**
 	 * Observer pattern
 	 */
@@ -297,8 +319,15 @@ public class Main {
 		Prototype b = a.createClone();
 		a.setName("ok");
 		a.setAge(88);
+		System.out.println("----a----");
+		System.out.println(a.getName());
+		System.out.println(a.getAge());
+		System.out.println("----b----");
 		System.out.println(b.getName());
 		System.out.println(b.getAge());
-		
 	}
+	private static String getHoge(){
+		return "aa";
+	}
+	
 }
