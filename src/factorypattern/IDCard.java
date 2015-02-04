@@ -1,7 +1,6 @@
 
-package idcard;
+package factorypattern;
 
-import factorypattern.*;
 public class IDCard extends Product{
 	private String owner;
 	private int num;

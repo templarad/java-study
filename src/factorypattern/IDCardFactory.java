@@ -1,4 +1,4 @@
-package idcard;
+package factorypattern;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -6,7 +6,6 @@ import java.util.List;
 
 import adapterpattern.FileIO;
 import adapterpattern.FileProperties;
-import factorypattern.*;
 public class IDCardFactory extends Factory{
 
 	private List<String> owners = new ArrayList<String>();

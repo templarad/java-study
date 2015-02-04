@@ -1,6 +1,5 @@
-import idcard.IDCardFactory;
-
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
@@ -36,7 +35,8 @@ import designpattern.observer.Observer;
 import designpattern.observer.State;
 import designpattern.observer.Subject;
 import designpattern.prototype.Prototype;
-import factorypattern.Factory;;
+import factorypattern.Factory;
+import factorypattern.IDCardFactory;
 
 /**
  * Design Pattern test class.
@@ -57,7 +57,7 @@ public class Main {
 
 	public static void main(String[] args) {
 //		 (new Facade()).makepeople("");
-		 iterator();
+//		 iterator();
 		//observer();
 		 //command();
 		// builder();
@@ -68,8 +68,8 @@ public class Main {
 		// mediator();
 		// strategy();
 		// bridge();
-		//prototype2();
-		//abstractFactory();
+		prototype2();
+//		abstractFactory();
 	}
 	private static void lambda(){
 		Optional<String> hogeOpt = Optional.ofNullable(getHoge()); // 値をラップする
@@ -316,15 +316,22 @@ public class Main {
 	
 	public static void prototype2() {
 		Prototype a = new Prototype();
+		//List<String> newlist = ArrayList<String>
 		Prototype b = a.createClone();
-		a.setName("ok");
+		String aaa = "aaa";
+		a.setName("Kity");
 		a.setAge(88);
+		a.alist.add(aaa);
+		//deep copy 簡単に書く方法?
+		
 		System.out.println("----a----");
 		System.out.println(a.getName());
 		System.out.println(a.getAge());
+		System.out.println(a.alist.size());
 		System.out.println("----b----");
 		System.out.println(b.getName());
 		System.out.println(b.getAge());
+		System.out.println(b.alist.size());
 	}
 	private static String getHoge(){
 		return "aa";
